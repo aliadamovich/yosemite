@@ -986,6 +986,258 @@ body._lock {
 
 .custom-ar-left {}
 
+
+//!==OPTION==========================================================================//
+.main__options {}
+
+.options {}
+
+.options__body {
+	padding-top: calc(0px + 120 * ((100vw - 320px) / (1600 - 320)));
+}
+
+.options__row {}
+
+.row-option {}
+
+.row-option__body {
+	display: flex;
+
+	@media (max-width:767px) {
+		flex-direction: column-reverse;
+	}
+
+	;
+}
+
+.row-option__body-rev {
+	flex-direction: row-reverse;
+
+	@media (max-width:767px) {
+		flex-direction: column-reverse;
+
+	}
+
+	;
+}
+
+.row-option__image {
+	flex: 0 1 50%;
+
+	@media (max-width:767px) {
+		flex: 0 1 100%;
+		padding: 0px 0px 60% 0px;
+	}
+
+	;
+}
+
+
+.row-option__content {
+	padding: 150px 15px 215px 15px;
+	flex: 0 1 50%;
+	display: flex;
+	justify-content: center;
+
+	@media (max-width:1024px) {
+		padding: 50px 15px;
+	}
+
+	;
+
+	@media (max-width:767px) {
+		&:not(:last-child) {
+			padding: 0 15px;
+		}
+	}
+
+	;
+}
+
+.content-block {}
+
+.row-option__container {
+	max-width: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	>*:not(:last-child) {
+		margin: 0px 0px 40px 0px;
+	}
+
+	@media (max-width:767px) {
+		max-width: 100%;
+	}
+}
+
+.row-option__title {
+	color: #4D465B;
+}
+
+.content-block__title {
+	font-size: calc(42px + 48 * ((100vw - 320px) / (1600 - 320)));
+	;
+	line-height: 110%;
+}
+
+.row-option__text {
+	color: #4D465B;
+}
+
+.content-block__text {
+	font-family: Circe;
+	font-size: calc(18px + 2 * ((100vw - 320px) / (1600 - 320)));
+	line-height: 150%;
+}
+
+.row-option__button {
+	color: #4D465B;
+	text-align: center;
+	font-family: Circe;
+	font-size: 20px;
+	text-transform: uppercase;
+	border: 1px solid #4D465B;
+	padding: 0 97px;
+	transition: all 0.2s ease-out 0s;
+
+	span {
+		background: url(/img/icons/arrow.svg) right no-repeat;
+		padding: 0px 70px 0px 0px;
+	}
+
+	&:hover {
+		border: 1px solid rgba(129, 129, 129, 0.40);
+	}
+
+	@media (max-width:768px) {
+		padding: 0px 50px;
+	}
+}
+
+.content-block__btn {
+	display: inline-flex;
+}
+
+.row-option__btn {
+	@media (max-width:767px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.content-block__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75px;
+	background: transparent;
+
+	@media (max-width:768px) {
+		height: 60px;
+	}
+
+	;
+}
+
+//!===ADVENTURE=========================================================================//
+.main__adventure {}
+
+.adventure {}
+
+.adventure__body {
+	position: relative;
+}
+
+.adventure__content {
+	padding-right: 93px;
+	padding-top: calc(70px + 264 * ((100vw - 320px) / (1600 - 320)));
+	padding-bottom: 106px;
+	position: relative;
+	z-index: 5;
+	display: flex;
+	justify-content: flex-end;
+
+	@media (max-width:767px) {
+		justify-content: center;
+		padding-left: 15px;
+		padding-right: 15px;
+
+	}
+
+	;
+}
+
+
+.adventure__container {
+	max-width: 574px;
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width:479px) {
+		align-items: center;
+		text-align: center;
+	}
+
+	;
+
+}
+
+.adventure__title {
+	margin: 0px 0px 20px 0px;
+	color: #FFF;
+
+	@media (max-width:992px) {
+		color: #645b75;
+	}
+
+	;
+}
+
+
+.adventure__text {
+	margin: 0px 0px 35px 0px;
+	color: #FFF;
+
+	@media (max-width:479px) {
+		color: #645b75;
+	}
+}
+
+
+.adventure__btn {
+	display: inline-flex;
+}
+
+
+.adventure__button {
+	border: 1px solid #FFF;
+	box-shadow: 0 0.5px 2px #d1ccdb;
+	position: relative;
+	top: 0;
+	transition: all 0.2s ease-out 0s;
+
+	span {
+		scale: 1.1;
+		padding: 5px 75px;
+		background: url(/img/icons/arrow-w.svg) center no-repeat;
+	}
+
+	&:hover {
+		box-shadow: 0 1px 1px #d1ccdb;
+		scale: 1.1;
+	}
+}
+
+.adventure__image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
 //!============================================================================//
 //!============================================================================//
 //!============================================================================//
