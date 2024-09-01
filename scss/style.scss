@@ -1,41 +1,75 @@
 @import "nullstyle.scss";
 
-//ШРИФТЫ===========================================
-//&display=swap&subset=cyrillic-ext
-
-//ШРИФТ ПО УМОЛЧАНИЮ===============================
-// $fontfamily:"Lato";
-//Переменные=======================================
-$minwidth: 320px;
-$mv: 1170;
-$md1: $mv+12;
-$md2: 992.98;
-$md3: 767.98;
-$md4: 479.98;
-
-//Основная сетка=====(ОСТОРОЖНЕЕ С WIDTH 100%)=========
-.container {
-	max-width: $mv+px;
-	margin: 0 auto;
-	width: 100%;
-	@media (max-width:$md1+px) {max-width: 970px;}
-	@media (max-width:$md2+px) {max-width: 750px;}
-	@media (max-width:$md3+px) {max-width: none;padding: 0 10px;}
+// ======ШРИФТЫ======================================================================//
+@font-face {
+	font-family: 'Circe';
+	src: url('../fonts/Circe-Regular.woff2') format('woff2'),
+		url('../fonts/Circe-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
-//КОНТЕЙНЕРЫ=========================================
-.wrapper{
+@font-face {
+	font-family: 'Circe';
+	src: url('../fonts/Circe-Light.woff2') format('woff2'),
+		url('../fonts/Circe-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: 'Freight';
+	src: url('../fonts/Freight-BigBook.woff2') format('woff2'),
+		url('../fonts/Freight-BigBook.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'DietDidot';
+	src: url('../fonts/DietDidotTitleW03-Italic.woff2') format('woff2'),
+		url('../fonts/DietDidotTitleW03-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+.dd {
+	font-family: DietDidot;
+}
+
+.cc {
+	font-family: Circe;
+}
+
+//Контейнеры=============================
+html {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
-//для бугрера
 body._lock {
 	overflow: hidden;
 }
-//ТЭГИ===============================================
+
+.main {
+	flex: 1 1 auto;
+}
+
 .ibg {
 	position: relative;
+
 	img {
 		position: absolute;
 		width: 100%;
@@ -45,6 +79,322 @@ body._lock {
 		object-fit: cover;
 	}
 }
+
+//!==HEADER==========================================================================//
+.header {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 50;
+}
+
+.header-top {
+	min-height: 184px;
+	display: flex;
+	align-items: center;
+}
+
+.header-top__body {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-left: calc(10px + 74 * ((100vw - 320px) / (1600 - 320)));
+
+	@media (max-width:375px) {
+		flex-direction: column;
+	}
+
+	;
+}
+
+.header-top__logo {
+	@media (max-width:375px) {
+		padding: 0px 0px 15px 0px;
+	}
+
+	;
+}
+
+.header-top__img {}
+
+.header-top__name {
+	padding: 0px 0px 0px 18px;
+	color: #D8D3E2;
+	font-family: Circe;
+	font-size: 25px;
+	line-height: 10px;
+
+	@media (max-width:767px) {
+		color: #f1eef8;
+	}
+
+	;
+}
+
+//!!правое меню=================
+.header-right {}
+
+.menu {
+	position: absolute;
+	z-index: 5;
+	top: 130px;
+	right: 0px;
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width:992px) {
+		top: 55px;
+	}
+
+	;
+}
+
+//*КНОПКА MENU===================
+.menu-test {
+	position: relative;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 20px;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur (2px);
+	transition: all 0.5s ease 0s;
+
+	&:hover {
+		background: #4D465B;
+
+		.menu-text {
+			span {
+				color: #fff;
+			}
+		}
+
+		.menu__icon {
+			span {
+				background: #fff;
+			}
+		}
+	}
+
+	&._active {
+		.menu__icon {
+			span {
+				transform: scale(0) translate(0px, -50%);
+
+				&:first-child {
+					top: 50%;
+					transform: rotate(-45deg) translate(0px, -50%);
+				}
+
+				&:last-child {
+					bottom: 50%;
+					transform: rotate(45deg) translate(0px, 50%);
+				}
+			}
+		}
+
+		~.header-right__booking {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.menu-text {
+			span {
+				&:first-child {
+					display: none;
+				}
+
+				&:last-child {
+					display: block;
+				}
+			}
+		}
+	}
+
+	@media (max-width:992px) {
+		height: 70px;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	;
+}
+
+.menu-text {
+	span {
+		writing-mode: vertical-lr;
+		transform: rotate(-180deg);
+		font-size: 22px;
+		color: #4D465B;
+		text-align: center;
+		font-family: Circe;
+		padding: 0px 0px 20px 0px;
+		transition: all 0.5s ease 0s;
+
+		&:first-child {
+			display: block;
+		}
+
+		&:last-child {
+			display: none;
+		}
+
+		@media (max-width:992px) {
+			writing-mode: horizontal-tb;
+			transform: rotate(360deg);
+			padding: 0 0 0 25px;
+		}
+
+		;
+	}
+}
+
+.menu__icon {
+	position: relative;
+	z-index: 5;
+	width: 30px;
+	height: 18px;
+	display: block;
+	transition: all 0.5s ease 0s;
+
+	//*делаем полосочки бургера
+	span {
+		left: 0;
+		top: 8px;
+		position: absolute;
+		height: 1.5px;
+		width: 100%;
+		transition: all 0.5s ease 0s;
+		background-color: #4D465B;
+
+		&:first-child {
+			top: 0px;
+		}
+
+		&:last-child {
+			top: auto;
+			bottom: 0px;
+		}
+	}
+}
+
+//*КНОПКА BOOKING=================================//
+
+.header-right__booking {
+	writing-mode: vertical-lr;
+	transform: rotate(-180deg);
+	background: #4D465B;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 25px 0;
+	transition: all 1s ease 0s;
+	visibility: visible;
+	opacity: 1;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur (2px);
+
+		span {
+			color: #4D465B;
+		}
+
+		svg {
+			transform: rotate(-90deg);
+
+			path {
+				stroke: #4D465B;
+			}
+		}
+	}
+
+	@media (max-width:992px) {
+		display: none;
+	}
+
+	;
+}
+
+.header-booking__svg {
+	svg {
+		transform: rotate(-180deg);
+		transition: all 0.5s ease 0s;
+	}
+}
+
+.header-right__booking_item {
+	font-family: Circe;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: #FFF;
+	text-align: center;
+	padding: 0 0 20px 0;
+	transition: all 0.5s ease 0s;
+}
+
+
+//*====МЕНЮ-СПИСОК-АДАПТИВ=========================
+.header-right__buttons {
+	position: fixed;
+	width: 45%;
+	height: 100%;
+	right: -100%;
+	top: 0;
+	overflow: auto;
+	background-color: rgba(77, 70, 91, 0.918);
+	transition: right 1s ease 0s;
+
+	ul {
+		display: none;
+	}
+
+	&._active {
+		right: 0;
+
+		ul {
+			display: flex;
+		}
+	}
+
+	@media (max-width:768px) {
+		width: 100%;
+		background-color: rgb(77, 70, 91);
+	}
+}
+
+
+.header-right__list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 150px 0px 0px 0px;
+}
+
+.header-right__item {
+	padding: 0px 0px 50px 0px;
+
+	&:last-child {
+		padding: 0px 0px 0px 0px;
+	}
+}
+
+.header-right__link {
+	color: #D8D3E2;
+	font-size: 38px;
+	line-height: 30px;
+	transition: font-size 0.5s ease 0s;
+
+	&:hover {
+		font-size: 45px;
+	}
+}
+
 //!============================================================================//
 //!============================================================================//
 //!============================================================================//

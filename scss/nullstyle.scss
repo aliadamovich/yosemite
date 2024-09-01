@@ -1,5 +1,4 @@
 /*Обнуление*/
-
 * {
 	padding: 0;
 	margin: 0;
@@ -35,12 +34,11 @@ html,
 body {
 	height: 100%;
 	width: 100%;
+	font-family: Freight;
+	font-weight: normal;
 	font-size: 100%;
 	line-height: 1;
 	font-size: 14px;
-	font-family: Montserrat;
-	font-weight: 500;
-	color: #737373;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -91,4 +89,5 @@ h6 {
 	font-size: inherit;
 	font-weight: 400;
 }
+
 /*--------------------*/
