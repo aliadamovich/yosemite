@@ -1187,15 +1187,14 @@ body._lock {
   transition: all 0.2s ease-out 0s;
 }
 .row-option__button span {
-  background: url("/img/icons/arrow.svg") right no-repeat;
-  padding: 0px 70px 0px 0px;
+  padding: 0px 40px 0px 0px;
 }
 .row-option__button:hover {
   border: 1px solid rgba(129, 129, 129, 0.4);
 }
 @media (max-width: 768px) {
   .row-option__button {
-    padding: 0px 50px;
+    padding: 0px 20px;
   }
 }
 
@@ -1321,8 +1320,11 @@ body._lock {
 }
 .adventure__button span {
   scale: 1.1;
-  padding: 5px 75px;
-  background: url("/img/icons/arrow-w.svg") center no-repeat;
+  padding: 5px 40px;
+}
+.adventure__button span img {
+  width: 30px;
+  height: 30px;
 }
 .adventure__button:hover {
   -webkit-box-shadow: 0 1px 1px #d1ccdb;
@@ -1589,16 +1591,10 @@ body._lock {
   transition: all 0.2s ease-out 0s;
 }
 .content-booking__button span {
-  background: url("/img/icons/Group37.svg") right no-repeat;
-  padding: 0px 60px 0px 0px;
+  padding: 0px 30px 0px 0px;
 }
 .content-booking__button:hover {
   border: 1px solid rgba(129, 129, 129, 0.4);
-}
-@media (max-width: 768px) {
-  .content-booking__button {
-    padding: 5px 70px;
-  }
 }
 
 .plan {

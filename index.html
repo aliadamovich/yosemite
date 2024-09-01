@@ -38,18 +38,18 @@
 				</a>
 				<div class="header-right__buttons">
 					<ul class="header-right__list">
-						<li class="header-right__item"><a href="#" class="header-right__link">Home of Yosemite</a></li>
-						<li class="header-right__item"><a href="#" class="header-right__link">Best hikes</a></li>
-						<li class="header-right__item"><a href="#" class="header-right__link">Routes</a></li>
-						<li class="header-right__item"><a href="#" class="header-right__link">Map creator</a></li>
-						<li class="header-right__item"><a href="#" class="header-right__link">Yosemite lodging</a></li>
+						<li class="header-right__item"><a href="#history" class="header-right__link">Home of Yosemite</a></li>
+						<li class="header-right__item"><a href="#hikes" class="header-right__link">Best hikes</a></li>
+						<li class="header-right__item"><a href="#route" class="header-right__link">Routes</a></li>
+						<li class="header-right__item"><a href="#booking" class="header-right__link">Yosemite lodging</a></li>
 						<li class="header-right__item"><a href="#plan" class="header-right__link">Booking</a></li>
+						<li class="header-right__item"><a href="#reviews" class="header-right__link">Reviews</a></li>
 					</ul>
 				</div>
 			</div>
 		</header>
 		<main class="main">
-			<div class="main__menu mainblock">
+			<section class="main__menu mainblock">
 				<div class="main-swiper__content">
 					<div class="main-swiper__title">Yosemite Hikes</div>
 					<div class="main-swiper__subtitle">Make every adventure unique</div>
@@ -72,8 +72,8 @@
 								</div> -->
 					<div class="swiper-pagination"></div>
 				</div>
-			</div>
-			<div class="main__history history">
+			</section>
+			<section id="history" class="main__history history">
 				<div class="history__container">
 					<div class="history__body">
 						<div class="history__image ibg"><img src="img/history/1.jpg" alt="yosemite_national_park"></div>
@@ -97,8 +97,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="main__hikes hikes">
+			</section>
+			<section id="hikes" class="main__hikes hikes">
 				<div class="hikes__container">
 					<div class="hikes__body">
 						<div class="hikes__title">Best Hikes in Yosemite National Park</div>
@@ -114,8 +114,8 @@
 					</div>
 					<div class="hikes__image ibg"><img src="img/bground.jpg" alt=""></div>
 				</div>
-			</div>
-			<div class="main__video video">
+			</section>
+			<section class="main__video video">
 				<div class="video__body">
 					<div class="video__title">1000+ trails. Million researchers. Endless memories.</div>
 					<div class="video__text">The beauty of nature doesn’t need to be hard to find. Our goal is simple - build the
@@ -127,7 +127,7 @@
 						<source src="video/video.mp4" type="video/mp4">
 					</video>
 				</div>
-			</div>
+			</section>
 			<section id="route" class="main__routes routes">
 				<div class="routes__container">
 					<h3 class="routes__title">Choose your route</h3>
@@ -214,7 +214,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="main__options options">
+			<section class="main__options options">
 				<div class="options__body">
 					<div class="options__row row-option">
 						<div class="row-option__body">
@@ -226,8 +226,12 @@
 									<div class="row-option__text content-block__text">Never get lost finding the trail. With just one click, get
 										driving directions right to the trail head. Access has never
 										been so easy.</div>
-									<div class="row-option__btn content-block__btn"><a href=""
-											class="row-option__button content-block__button"><span>MORE</span></a></div>
+									<div class="row-option__btn content-block__btn">
+										<a href="" class="row-option__button content-block__button">
+											<span>MORE</span>
+											<img src="img/icons/arrow.svg" alt="">
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -243,14 +247,16 @@
 										that inspire you to get outside. Never lose track of your
 										next adventure.</div>
 									<div class="row-option__btn content-block__btn"><a href=""
-											class="row-option__button content-block__button"><span>MORE</span></a></div>
+											class="row-option__button content-block__button">
+											<span>MORE</span>
+										<img src="img/icons/arrow.svg" alt=""></a></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="main__adventure adventure">
+			</section>
+			<section class="main__adventure adventure">
 				<div class="adventure__body">
 					<div class="adventure__content content-block">
 						<div class="adventure__container">
@@ -260,14 +266,17 @@
 								With AllTrails you can easily create custom maps from your computer. Draw your route(s), select your colors,
 								add
 								waypoints, then share with friends or family.</div>
-							<div class="adventure__btn btn"><a href="" class="adventure__button content-block__button"><span></span></a>
+							<div class="adventure__btn btn">
+								<a href="" class="adventure__button content-block__button">
+									<span><img src="img/icons/arrow-w.svg" alt=""></span>
+								</a>
 							</div>
 						</div>
 					</div>
 					<div class="adventure__image ibg"><img src="img/adventure/1.jpg" alt=""></div>
 				</div>
-			</div>
-			<div id="booking" class="main__booking booking">
+			</section>
+			<section id="booking" class="main__booking booking">
 				<div class="booking__container">
 					<div class="booking__title">Yosemite Mariposa <br> <span>County Lodging</span></div>
 					<div class="booking__content content-booking">
@@ -346,12 +355,15 @@
 							</div>
 						</div>
 						<div class="content-booking__btn content-block__btn">
-							<a href="" class="content-booking__button content-block__button"><span>LOAD MORE</span></a>
+							<a href="" class="content-booking__button content-block__button">
+								<span>LOAD MORE</span>
+								<img src="img/icons/Group37.svg" alt="">
+							</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="plan" class="main__plan plan">
+			</section>
+			<section id="plan" class="main__plan plan">
 				<div class="plan__body">
 					<div class="plan__title">Plan your best route now</div>
 					<form action="" class="plan__form form-plan">
@@ -388,8 +400,8 @@
 					</form>
 				</div>
 				<div class="plan__image ibg"><img src="img/plan/1.jpg" alt="planning route"></div>
-			</div>
-			<div class="main__review review">
+			</section>
+			<section id="reviews" class="main__review review">
 				<div class="review__container">
 					<div class="review__title">Join a community of 20 million outdoor explorers</div>
 					<div class="swiper review__slider" id="swiper-3">
@@ -574,7 +586,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container container-footer">
