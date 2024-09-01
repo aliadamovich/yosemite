@@ -1,117 +1,136 @@
 "use strict"
 
-//*МЕНЮ БУРГЕР=================
-const iconMenu = document.querySelector('.menu__icon');
-if (iconMenu) {
-	const menuBody = document.querySelector('.menu__body');
-	iconMenu.addEventListener("click", function (e) {
+// const iconMenu = document.querySelector('.menu-test');
+// if (iconMenu) {
+// 	const menuBody = document.querySelector('.header-right__buttons');
+// 	iconMenu.addEventListener("click", function (e) {
+// 		document.body.classList.toggle('_lock');
+// 		iconMenu.classList.toggle('_active');
+// 		menuBody.classList.toggle('_active');
+// 	});
+// }
+
+
+//==
+const iconMenu = document.querySelector('.menu-test');
+const menuBody = document.querySelector('.header-right__buttons');
+
+document.addEventListener('click', menu);
+
+function menu(event) {
+	if (event.target.closest('.menu-test')) {
 		document.body.classList.toggle('_lock');
 		iconMenu.classList.toggle('_active');
 		menuBody.classList.toggle('_active');
-	});
+	}
+	if (!event.target.closest('.menu-test')) {
+		document.body.classList.remove('_lock');
+		iconMenu.classList.remove('_active');
+		menuBody.classList.remove('_active');
+	}
 }
-//*============================
+//==
 
 
 //*СЛАЙДЕР SWIPER===============
-const swiper = new Swiper('.swiper', {
-	//стрелки
-	// navigation: {
-	// 	nextEl: '.swiper-button-next',
-	// 	prevEl: '.swiper-button-prev'
-	// },
-	//буллеты
+new Swiper('.main-swiper', {
 	pagination: {
-		el: '.swiper-pagination',
+		el: "#swiper-1 .swiper-pagination",
 		clickable: true,
-		//динамисеские буллеты
-		// dynamicBullets:true,
-		//кастомные буллеты - цифры внутри буллета
-		// renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// },
-		//Фракция
-		// type: 'fraction',
-		//кастомный вывод фракции (показывает какой по счету слайд и сколько осталось)
-		// renderFraction: function (currentClass, totalClass) {
-		// 	return 'Фото <span class="' + currentClass + '"></span>' +
-		// 	' из ' +
-		// 	'<span class"' + totalClass + '"></span>';
-		// },
-		// type: 'progressbar'
-		// },
-
-		// scrollbar: {
-		// 	el: '.swiper-scrollbar',
-		// возможность перетаскивать скролл
-		// 	draggable: true
 	},
-
-	//Переклюяение на след слайд при клике мышкой
-	// slideToClickedSlide: true,
-
-	//Управление клавиатурой
-	keyboard: {
-		enabled: true,
-		onlyInViewport: true,
-		pageUpDown: true,
+	autoplay: {
+		delay: 3000,
 	},
-	//управление колесом мыши
-	mousewheel: {
-		sensitivity: 1,
-		// eventsTarget: "."
-	},
-	//автовысота
-	autoHeight: true,
-
-	//колисемтво слайдов для показа (можно дробное число)
-	slidesPerView: 1,
-
-	//отступы между слайдами
-	spaceBetween: 40,
-
-	//Количество пролистываемых страниц
-	slidesPerGroup: 1,
-
-	//активный слайд по центру
-	// centeredSlides: true,
-
-	//бесконечный прокрут
-	// loop: true,
-
-	//свободный режим- прокручиваешь на сколько сам хочешь
-	// freeMode: true,
-
-	//автопрокрутка
-	// autoplay: {
-	// 	delay: 1000,
-	// 	stopOnLastSlide: true,
-	//отключить после ручного переключения
-	// 	disableOnInteraction: false
-	// },
-
-	// speed: 800,
-
-	//вертикальный скролл 
-	// direction: 'vertical',
-
-	//эффект переключения слайдов
-	// effect: 'fade',
+	speed: 3000,
+	loop: true,
+	effect: 'fade',
 	//дополнение к fade
 	// fadeEffect: {
 	// crossFade: true
 	// },
+}),
+
+
+	new Swiper(".routes__slider", {
+		//стрелки
+		navigation: {
+			nextEl: '.custom-ar-right',
+			prevEl: '.custom-ar-left'
+		},
+		//буллеты
+		pagination: {
+			el: '.swiper-routes-number',
+			type: 'fraction',
+		},
+
+		slidesPerView: 3.5,
+		spaceBetween: 5,
+		centeredSlides: true,
+		loop: true,
+		autoplay: {
+			delay: 1300,
+			disableOnInteraction: false
+		},
+		speed: 1300,
+
+		breakpoints: {
+			320: {
+				slidesPerView: 1.3,
+			},
+			480: {
+				slidesPerView: 3,
+				centeredSlides: true
+			},
+			993: {
+				slidesPerView: 3.6,
+			},
+		}
+	});
+
+
+
+
+new Swiper(".review__slider", {
+	//стрелки
+	navigation: {
+		nextEl: '.custom-ar-right',
+		prevEl: '.custom-ar-left'
+	},
+	//буллеты
+	pagination: {
+		el: '.swiper-review-number',
+		type: 'fraction',
+	},
+
+	// autoHeight: true,
+
+	//количеcтво слайдов для показа (можно дробное число)
+	slidesPerView: 3,
+
+	//отступы между слайдами
+	spaceBetween: 22,
+
+	//Количество пролистываемых страниц
+	slidesPerGroup: 2,
+
+	loop: true,
+
+	//свободный режим- прокручиваешь на сколько сам хочешь
+	freeMode: true,
+
+	speed: 1300,
+
 
 	//Адаптив
-	// breakpoints: {
-	// 	320: {
-	// 		slidesPerView: 1,
-	// 	},
-	// 	480: {
-	// 		slidesPerView: 2,
-	// 	},
-	// 	992: {
-	// 		slidesPerView: 3,
-	// 	},
-	// }
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+		},
+		993: {
+			slidesPerView: 2,
+		},
+		1440: {
+			slidesPerView: 3,
+		},
+	}
 });
